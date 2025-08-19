@@ -1,11 +1,11 @@
-function App() {
-  const [count, setCount] = useState(0)
+import AltaMovie from "./components/AltaMovie";
 
+function App() {
   return (
     <main>
-
+      <AltaMovie />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
