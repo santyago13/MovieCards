@@ -1,7 +1,18 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useState } from "react";
 
 const AltaMovie = () => {
+  //guardar los datos de la película
+  const [movie, setMovie] = useState({
+    name: "",
+    genero: "",
+    descripcion: "",
+  });
+  // guardar los datos en el array pusheando
+
+
+
   return (
     <div className="container">
       <h1 className="text-center my-5">Ingresa una nueva película</h1>
