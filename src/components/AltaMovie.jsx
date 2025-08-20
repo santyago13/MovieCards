@@ -1,11 +1,12 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Movie from "../MovieClass";
 import CardMovie from "./CardMovie";
 
 const AltaMovie = () => {
-  const [movie, setMovie] = useState([]);
+  const moviesLocalStorage = JSON.parse(localStorage.getItem("movieKey")) || [];
+  const [movie, setMovie] = useState(moviesLocalStorage);
   const [nombre, setNombre] = useState("");
   const [genero, setGenero] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -15,7 +16,20 @@ const AltaMovie = () => {
     const newMovie = new Movie(nombre, genero, descripcion);
     setMovie([...movie, newMovie]);
     console.log(movie);
+    // limpiar formulario
+    setNombre("");
+    setGenero("");
+    setDescripcion("");
   }
+
+  function borrarMovie(nombreMovie) {
+    const moviesFiltradas = movie.filter((ItemCard)=> ItemCard !== nombreMovie)
+    setMovie(moviesFiltradas)
+  }
+
+    useEffect(() => {
+    localStorage.setItem("movieKey", JSON.stringify(movie));
+  }), [movie];
 
   return (
     <div className="container">
@@ -69,7 +83,7 @@ const AltaMovie = () => {
         </Button>
       </Form>
       <div className="border my-4 rounded-4 shadow"></div>
-      <CardMovie propMovie={movie} />
+      <CardMovie propMovie={movie} borrarMovie={borrarMovie} />
     </div>
   );
 };

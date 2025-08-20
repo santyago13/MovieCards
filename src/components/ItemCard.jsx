@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-const ItemCard = ({ propMovie }) => {
+const ItemCard = ({ propMovie, borrarMovie }) => {
   return (
     <Col className="col-12 col-md-6 col-lg-3">
       <Card className="h-100 rounded-4 shadow">
@@ -14,7 +14,7 @@ const ItemCard = ({ propMovie }) => {
           <Card.Text className="text-center">{propMovie.descripcion}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-center">
-          <Button variant="danger" type="button">
+          <Button variant="danger" type="button" onClick={() => borrarMovie(propMovie)}>
             Borrar
           </Button>
         </Card.Footer>
