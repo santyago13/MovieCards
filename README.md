@@ -1,12 +1,35 @@
-# React + Vite
+# 📝 Cards de peliculas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación simple de lista de tareas desarrollada en React, donde se pueden agregar, visualizar y eliminar tareas, además de mantenerlas guardadas en el localStorage para que no se pierdan al recargar la página.
+---
 
-Currently, two official plugins are available:
+## 🌐 Deploy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 Podés ver el proyecto en vivo acá:  
+[🔗 Ver aplicación desplegada](https://moviecardsr.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Funcionalidades
+
+-➕ Agregar tareas mediante un formulario.
+-📋 Listar todas las tareas en pantalla.
+-❌ Eliminar tareas de forma individual.
+-💾 Persistencia con localStorage: las tareas se guardan y cargan automáticamente.
+
+---
+
+## 🧪 Tecnologías usadas
+
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.  
+- **JavaScript (ES6+)**: Lenguaje de programación principal del proyecto.  
+- **Bootstrap 5**: Framework de CSS para estilos y diseño responsive.  
+- **Vite** o **Create React App**: Herramienta para configurar y ejecutar la aplicación rápidamente.  
+- **HTML5 & CSS3**: Estructura y estilos básicos del proyecto.  
+
+---
+
+## 👨‍💻 Autor
+
+- **Nombre:** Robledo Garrido Santiago Andrés
+    
