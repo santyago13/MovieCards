@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import Movie from "../MovieClass";
+import CardMovie from "./CardMovie";
 
 const AltaMovie = () => {
   const [movies, setMovies] = useState([]);
@@ -27,22 +28,12 @@ const AltaMovie = () => {
       <Form className="border p-4 rounded-4 shadow" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresa un nombre"
-            required
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-          />
+          <Form.Control type="text" placeholder="Ingresa un nombre" required />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicSelect">
           <Form.Label>Género</Form.Label>
-          <Form.Select
-            required
-            value={genero}
-            onChange={(e) => setGenero(e.target.value)}
-          >
+          <Form.Select required>
             <option value="">Selecciona un género</option>
             <option>Comedia</option>
             <option>Acción</option>
@@ -63,8 +54,6 @@ const AltaMovie = () => {
             as="textarea"
             rows={3}
             placeholder="Ingresa una descripción"
-            value={descripcion}
-            onChange={(e) => setDescripcion(e.target.value)}
           />
         </Form.Group>
 
@@ -72,6 +61,8 @@ const AltaMovie = () => {
           Agregar
         </Button>
       </Form>
+      <div className="border my-4 rounded-4 shadow"></div>
+      <CardMovie />
     </div>
   );
 };
