@@ -5,21 +5,16 @@ import Movie from "../MovieClass";
 import CardMovie from "./CardMovie";
 
 const AltaMovie = () => {
-  const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState([]);
   const [nombre, setNombre] = useState("");
   const [genero, setGenero] = useState("");
   const [descripcion, setDescripcion] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const nuevaPelicula = new Movie(nombre, genero, descripcion);
-    setMovies([...movies, nuevaPelicula]);
-    const updatedMovies = [...movies, nuevaPelicula];
-    //limpia los campos
-    setNombre("");
-    setGenero("");
-    setDescripcion("");
-    console.log(updatedMovies);
+  function handleSubmit(data) {
+    data.preventDefault();
+    const newMovie = new Movie(nombre, genero, descripcion);
+    setMovie([...movie, newMovie]);
+    console.log(movie);
   }
 
   return (
@@ -28,12 +23,22 @@ const AltaMovie = () => {
       <Form className="border p-4 rounded-4 shadow" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Nombre</Form.Label>
-          <Form.Control type="text" placeholder="Ingresa un nombre" required />
+          <Form.Control
+            type="text"
+            placeholder="Ingresa un nombre"
+            required
+            value={nombre}
+            onChange={(data) => setNombre(data.target.value)}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicSelect">
           <Form.Label>Género</Form.Label>
-          <Form.Select required>
+          <Form.Select
+            required
+            value={genero}
+            onChange={(data) => setGenero(data.target.value)}
+          >
             <option value="">Selecciona un género</option>
             <option>Comedia</option>
             <option>Acción</option>
@@ -54,6 +59,8 @@ const AltaMovie = () => {
             as="textarea"
             rows={3}
             placeholder="Ingresa una descripción"
+            value={descripcion}
+            onChange={(data) => setDescripcion(data.target.value)}
           />
         </Form.Group>
 
@@ -62,7 +69,7 @@ const AltaMovie = () => {
         </Button>
       </Form>
       <div className="border my-4 rounded-4 shadow"></div>
-      <CardMovie />
+      <CardMovie propMovie={movie} />
     </div>
   );
 };

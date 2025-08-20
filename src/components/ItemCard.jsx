@@ -1,23 +1,25 @@
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
-const ItemCard = () => {
+const ItemCard = ({ propMovie }) => {
   return (
-    <div>
+    <Col className="col-12 col-md-6 col-lg-3">
       <Card className="h-100 rounded-4 shadow">
-        <Card.Header className="text-center">Movie name</Card.Header>
+        <Card.Header className="text-center">{propMovie.nombre}</Card.Header>
         <Card.Body>
-          <Card.Text className="text-center text-muted">Movie genre</Card.Text>
-          <Card.Text className="text-center">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <Card.Text className="text-center text-muted">
+            {propMovie.genero}
           </Card.Text>
+          <Card.Text className="text-center">{propMovie.descripcion}</Card.Text>
         </Card.Body>
+        <Card.Footer className="text-center">
+          <Button variant="danger" type="button">
+            Borrar
+          </Button>
+        </Card.Footer>
       </Card>
-    </div>
+    </Col>
   );
 };
 
